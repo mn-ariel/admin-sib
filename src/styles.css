@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+h1,
+h2,
+h3,
+h4,
+h5,
+label {
+    color: #014a2c;
+    font-weight: bold;
+}
+
+label {
+    font-size: 18px;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
