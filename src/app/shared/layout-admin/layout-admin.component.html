@@ -1,0 +1,40 @@
+<!-- app.component.html -->
+<div class="d-flex flex-column vh-100">
+    <!-- Sidebar y Contenido Principal -->
+    <div class="d-flex flex-grow-1">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white custom-sidebar">
+            <a href="home" class="d-flex align-items-center mb-3 mb-md-0 text-white text-decoration-none">
+                <span class="fs-4">Admin S.I.B.</span>
+            </a>
+            <hr>
+            <!-- Menú de navegación -->
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="list-agreements" class="nav-link active" aria-current="page">
+                        Listar Convenios
+                    </a>
+                    <a href="register" class="nav-link active" aria-current="page">
+                        Registrar Usuario
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <!-- Usuario y cerrar sesion -->
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle me-2" style="font-size: 32px;"></i>
+                    <strong>Usuario</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                    <!--<li><a class="dropdown-item" href="#" (click)="logout()">Cerrar Sesión</a></li>-->
+                </ul>
+            </div>
+        </div>
+        <!-- Contenido Principal -->
+        <div class="bg-light flex-grow-1 content-area">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+.custom-sidebar {
+    background-color: #014a2c;
+    width: 280px;
+}
+
+.custom-sidebar .nav-link {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.custom-sidebar .nav-link.active {
+    background-color: #014a2c;
+    font-weight: bold;
+}
+
+.custom-sidebar .nav-link.hover {
+    color: #a8dadc;
+}
+
+.user-profile .dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.bi-person-circle {
+    font-size: 32px;
+}
+
+.content-area {
+    padding: 0rem;
+}
+
+.logo {
+    width: 5rem;
+    height: auto;
+}
+
+hr {
+    border: none;
+    height: 4px; 
+    background-color: #ffff; 
+}

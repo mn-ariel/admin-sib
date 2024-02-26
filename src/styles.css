@@ -12,6 +12,10 @@ label {
     font-size: 18px;
 }
 
+span {
+    font-weight: bold;
+}
+
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }

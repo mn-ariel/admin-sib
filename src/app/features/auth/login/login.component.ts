@@ -48,7 +48,7 @@ export class LoginComponent {
         localStorage.setItem('access_token', token);
   
         // Opcional: Navegar a otra ruta después del inicio de sesión
-        // this.router.navigate(['/ruta-de-post-login']);
+        this.router.navigate(['/new-agreement']);
       } catch (error) {
         this.errorMessage = 'Inicio de sesión fallido. Por favor, verifica tus credenciales.';
         this.showErrorAlert = true;
