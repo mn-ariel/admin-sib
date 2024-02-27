@@ -26,10 +26,6 @@
     font-size: 32px;
 }
 
-.content-area {
-    padding: 0rem;
-}
-
 .logo {
     width: 5rem;
     height: auto;
@@ -39,4 +35,9 @@ hr {
     border: none;
     height: 4px; 
     background-color: #ffff; 
+}
+
+.content-area {
+    padding: 5rem;
+    background-color: #f8f9fa;
 }

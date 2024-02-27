@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginDTO } from '../dto/login.dto';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginComponent {
   router = inject(Router)
 
   constructor(private fb: FormBuilder,
-              private _usersServ: AuthService) {
+    private _usersServ: AuthService) {
 
     this.formulario = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -34,22 +34,19 @@ export class LoginComponent {
 
   async onSubmit() {
     this.showErrorAlert = false;
-  
+
     if (this.formulario.valid) {
       const userDto: LoginDTO = this.formulario.value;
-  
+
       try {
         const response = await this._usersServ.login(userDto);
-        console.log('Inicio sesión con éxito', response);
-  
-        const token = response.access_token;
-        console.log('Token:', token);
+        console.log(response);
 
-        localStorage.setItem('access_token', token);
-  
-        // Opcional: Navegar a otra ruta después del inicio de sesión
+        this._usersServ.storeTokenAndExpiration(response.access_token);
+
         this.router.navigate(['/new-agreement']);
       } catch (error) {
+        console.error('Error al iniciar sesión:', error);
         this.errorMessage = 'Inicio de sesión fallido. Por favor, verifica tus credenciales.';
         this.showErrorAlert = true;
       }
@@ -58,5 +55,7 @@ export class LoginComponent {
       this.showErrorAlert = true;
     }
   }
-  
+
+
+
 }
