@@ -43,7 +43,7 @@ export class LoginComponent {
 
         this._usersServ.storeTokenAndExpiration(response.access_token);
 
-        this.router.navigate(['/new-agreement']);
+        this.router.navigate(['/home']);
       } catch (error) {
         console.error('Error al iniciar sesión:', error);
         this.errorMessage = 'Inicio de sesión fallido. Por favor, verifica tus credenciales.';
