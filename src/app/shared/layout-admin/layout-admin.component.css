@@ -33,11 +33,15 @@
 
 hr {
     border: none;
-    height: 4px; 
-    background-color: #ffff; 
+    height: 4px;
+    background-color: #ffff;
 }
 
 .content-area {
     padding: 5rem;
     background-color: #f8f9fa;
+}
+
+.usuario-texto {
+    margin-right: 8px;
 }

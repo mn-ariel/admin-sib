@@ -36,7 +36,7 @@ export class RegisterComponent {
       name: ['', [Validators.required, inputValidators(150, 8)]],
       email: ['', [Validators.required, emailValidator()]],
       password: ['', [Validators.required, passwordValidator()]],
-      role: ['Support']
+      role: ['admin']
     });
 
     this.registerUserForm.get('email')?.valueChanges.subscribe(() => {
@@ -121,7 +121,6 @@ export class RegisterComponent {
   private resetFormAndVariables(): void {
     this.registerUserForm.reset();
     this.errorMessage = "";
-    this.successMessage = "";
     this.emailRegisteredError = false
     this.showErrorAlert = false;
   }

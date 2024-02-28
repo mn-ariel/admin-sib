@@ -40,7 +40,6 @@ export class LoginComponent {
 
       try {
         const response = await this._usersServ.login(userDto);
-        console.log(response);
 
         this._usersServ.storeTokenAndExpiration(response.access_token);
 
@@ -55,7 +54,5 @@ export class LoginComponent {
       this.showErrorAlert = true;
     }
   }
-
-
 
 }

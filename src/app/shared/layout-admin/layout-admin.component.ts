@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../features/auth/services/auth.service';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-layout-admin',
@@ -11,15 +12,16 @@ import { AuthService } from '../../features/auth/services/auth.service';
 })
 
 export class LayoutAdminComponent {
+  dropdownOpen = false;
+  
   constructor(private _usersServ: AuthService) {
 
   }
 
-  ngOnInit() {
-
-    //console.log(this._usersServ.getToken())
-
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
   }
+
   logout() {
     this._usersServ.logout()
   }

@@ -20,17 +20,20 @@
             </ul>
             <hr>
             <!-- Usuario y cerrar sesion -->
-            <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="dropdown" [class.dropup]="dropdownOpen">
+                <a class="d-flex align-items-center text-white text-decoration-none"
+                    id="dropdownUser1" (click)="toggleDropdown()" [attr.aria-expanded]="dropdownOpen">
                     <i class="bi bi-person-circle me-2" style="font-size: 32px;"></i>
-                    <strong>Usuario</strong>
+                    <strong class="usuario-texto">Usuario</strong>
+                    <i [class.bi-chevron-down]="dropdownOpen" [class.bi-chevron-up]="!dropdownOpen" class="bi"></i>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <ul class="dropdown-menu shadow position-absolute" aria-labelledby="dropdownUser1"
+                    [class.show]="dropdownOpen" style="bottom: 100%;">
                     <li><a class="dropdown-item" href="#">Perfil</a></li>
                     <li><a class="dropdown-item" href="#" (click)="logout()">Cerrar Sesión</a></li>
                 </ul>
             </div>
+
         </div>
         <!-- Contenido Principal -->
         <div class="bg-light flex-grow-1">

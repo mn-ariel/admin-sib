@@ -32,3 +32,11 @@ span {
     border-color: #014a2c;
     font-weight: bold;
 }
+
+input {
+    border-color: #014a2c !important;
+}
+
+.card {
+    border-color: #014a2c !important;
+}
