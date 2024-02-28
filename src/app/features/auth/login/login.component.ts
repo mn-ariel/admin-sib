@@ -40,8 +40,7 @@ export class LoginComponent {
 
       try {
         const response = await this._usersServ.login(userDto);
-
-        this._usersServ.storeTokenAndExpiration(response.access_token);
+        this._usersServ.storeTokenAndExpiration(response.access_token, response.name);
 
         this.router.navigate(['/home']);
       } catch (error) {

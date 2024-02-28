@@ -12,9 +12,16 @@ import { Component } from '@angular/core';
 })
 
 export class LayoutAdminComponent {
+  user: string | null = "";
   dropdownOpen = false;
   
   constructor(private _usersServ: AuthService) {
+
+  }
+
+  ngOnInit() {
+
+    this.getUserSesion();
 
   }
 
@@ -26,6 +33,9 @@ export class LayoutAdminComponent {
     this._usersServ.logout()
   }
 
-
+  getUserSesion() {
+    this.user = this._usersServ.getUser()
+    console.log(this.user)
+  }
 
 }

@@ -24,7 +24,7 @@
                 <a class="d-flex align-items-center text-white text-decoration-none"
                     id="dropdownUser1" (click)="toggleDropdown()" [attr.aria-expanded]="dropdownOpen">
                     <i class="bi bi-person-circle me-2" style="font-size: 32px;"></i>
-                    <strong class="usuario-texto">Usuario</strong>
+                    <strong class="usuario-texto">{{user}}</strong>
                     <i [class.bi-chevron-down]="dropdownOpen" [class.bi-chevron-up]="!dropdownOpen" class="bi"></i>
                 </a>
                 <ul class="dropdown-menu shadow position-absolute" aria-labelledby="dropdownUser1"

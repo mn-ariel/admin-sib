@@ -14,7 +14,7 @@ export class AuthService {
   private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient,
-              private router: Router) { }
+    private router: Router) { }
 
   async login(formValue: LoginDTO): Promise<LoginResponse> {
     try {
@@ -27,13 +27,13 @@ export class AuthService {
     }
   }
 
-  public storeTokenAndExpiration(token: string): void {
+  public storeTokenAndExpiration(token: string, name: string): void {
     const expiresIn = 20 * 60 * 1000;
     const expiresAt = new Date().getTime() + expiresIn;
-    console.log(expiresAt);
     localStorage.setItem('access_token', token);
     localStorage.setItem('expires_at', expiresAt.toString());
-}
+    localStorage.setItem('name_user', name)
+  }
 
   tokenHasExpired(): boolean {
     const expiration = localStorage.getItem('expires_at');
@@ -53,6 +53,14 @@ export class AuthService {
       return null;
     }
     return localStorage.getItem('access_token');
+  }
+
+  getUser(): string | null {
+    if (this.tokenHasExpired()) {
+      this.logout();
+      return null;
+    }
+    return localStorage.getItem('name_user');
   }
 
 }
