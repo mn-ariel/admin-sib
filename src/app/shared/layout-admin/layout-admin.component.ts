@@ -35,7 +35,6 @@ export class LayoutAdminComponent {
 
   getUserSesion() {
     this.user = this._usersServ.getUser()
-    console.log(this.user)
   }
 
 }
